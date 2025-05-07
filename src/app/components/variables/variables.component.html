@@ -1,0 +1,18 @@
+<h1>Manejo de Variables</h1>
+<h2>One-way Data Binding</h2>
+<p>{{myTitle}}</p>
+<p>Saldo - $ {{saldo}}</p>
+<hr>
+<h2>Property Binding</h2>
+<img [src]="link" width="200" height="200" alt="Angular logo">
+<hr>
+<h2>Event Binding</h2>
+<textarea rows="5" cols="40" [(ngModel)]="textAreaValue" placeholder="Escribe algo aqui.."></textarea>
+<br><br>
+<button (click)="onSubmit()">Enviar</button>
+<hr>
+<h2>Two-way Data Binding</h2>
+<input type="text" [(ngModel)]="review" style="font-family: 'Franklin Gothic Medium'; font-size: 1.5rem; padding: 0.75rem; width: 60%;">
+<p>{{review}}</p>
+<button (click)="onSubmitReview()">Boton de Review</button>
+<hr>
