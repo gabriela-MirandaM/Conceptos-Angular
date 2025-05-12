@@ -1,0 +1,107 @@
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0,0, 0.1);
+}
+ th,td{
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+ }
+
+ th{
+  background-color: #f4f4f4;
+  font-weight: bold;
+ }
+ tr:nth-child(even){
+  background-color: #f9f9f9;
+ }
+ tr:hover{
+  background-color: #f1f1f1;
+  cursor: pointer;
+ }
+ */Clasificacion*/
+ .fuerte {
+   background-color: #4CAF50;
+   color: white;
+   padding: 4px 8px;
+   border-radius: 4px;
+ }
+
+ .medianamente-fuerte {
+   background-color: #FFEB3B;
+   color: #333;
+   padding: 4px 8px;
+   border-radius: 4px;
+ }
+
+ .debil {
+   background-color: #C62828;
+   color: white;
+   padding: 4px 8px;
+   border-radius: 4px;
+ }
+
+ /*Formulario*/
+ /* Contenedor general */
+ fieldset {
+   max-width: 400px;
+   margin: 1rem auto;
+   padding: 1.5rem;
+   border: 2px solid #ccc;
+   border-radius: 8px;
+   background-color: #fafafa;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+ }
+
+ /* Título */
+ legend {
+   font-size: 1.25rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
+ }
+
+ /* Etiquetas */
+ label {
+   display: block;
+   margin-top: 1rem;
+   font-weight: 600;
+   color: #333;
+ }
+
+ /* Inputs */
+ input[type="text"],
+ input[type="number"] {
+   width: 100%;
+   padding: 8px 10px;
+   margin-top: 4px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 1rem;
+   box-sizing: border-box;
+ }
+
+ /* Placeholders */
+ input::placeholder {
+   color: #aaa;
+   font-style: italic;
+ }
+
+ /* Botón */
+ button {
+   margin-top: 1.5rem;
+   padding: 10px 16px;
+   background-color: #007BFF;
+   color: white;
+   font-weight: bold;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+ }
+
+ button:hover {
+   background-color: #0056b3;
+ }

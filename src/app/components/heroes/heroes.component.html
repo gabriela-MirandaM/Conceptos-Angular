@@ -3,26 +3,26 @@
     <!-- Formulario -->
     <fieldset>
       <legend>Agregar Heroe</legend>
-      <label >ID: </label><br>
-      <input  />
+      <label for="id">ID: </label><br>
+      <input type="number" name="id" [(ngModel)]="newHeroe.id" placeholder="ID" min="0" />
       <br>
-      <label >Nombre: </label><br>
-      <input />
+      <label for="nombre">Nombre: </label><br>
+      <input type="text" name="nombre" [(ngModel)]="newHeroe.nombre" placeholder="Nombre"/>
       <br>
       <label >Planeta de Origen: </label><br>
-      <input  />
+      <input  type="text" name="planetaOrigen" [(ngModel)]="newHeroe.planetaOrigen" placeholder="Planeta de Origen"/>
       <br>
       <label >Poder: </label><br>
-      <input  />
+      <input  type="number" name="poder" [(ngModel)]="newHeroe.poder" placeholder="Poder" min="0"/>
       <br><br>
-      <button >Agregar</button>
+      <button type="submit" (click)="agregarHeroe()">Agregar</button>
     </fieldset>
   </div>
   <div>
     <!-- Listado de Heroes -->
     <h2>Listado de Heroes</h2>
     <p>Doble clic para modificar un heroe</p>
-    <table>
+    <table >
       <thead>
         <tr>
           <th>#</th>
@@ -33,15 +33,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-          </td>
-        </tr>
-
+        @for (heroe of heroesList(); track $index) {
+          <tr (dblclick)="extractHeroe(heroe)" >
+            <td>{{heroe.id}}</td>
+            <td>{{heroe.nombre}}</td>
+            <td>{{heroe.planetaOrigen}}</td>
+            <td>{{heroe.poder}}</td>
+            <td>
+              @if (heroe.poder > 0 && heroe.poder < 20000) {
+                <b class="classificacion debil">Débil</b>
+              }@else if (heroe.poder > 21000 && heroe.poder < 60000) {
+                <b class="classificacion medianamente-fuerte">Medianamente fuerte</b>
+              }@else if (heroe.poder > 61000) {
+                <b class="classificacion fuerte">Fuerte</b>
+              }
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </div>
