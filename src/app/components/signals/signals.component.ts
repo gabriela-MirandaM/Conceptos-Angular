@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
-
+import { Component, signal, computed, effect } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+//pipe
 @Component({
   selector: 'app-signals',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './signals.component.html'
 })
 export class SignalsComponent {
@@ -17,4 +18,17 @@ export class SignalsComponent {
   reset(){
     this.contador.update(valorActual => valorActual - valorActual);
   }
+
+  //Computed o señales computadas o variables computadas
+  porcentaje=computed(()=>this.contador()*0.20);
+
+  firstName =signal('John');
+  lastName = signal('Doe');
+
+  fullName = computed(()=> `${this.firstName()} ${this.lastName()}`);
+
+  //effect
+  myeffect= effect(()=>{
+    console.log(`Valor del contador: ${this.contador()}`);
+  });
 }
