@@ -3,6 +3,7 @@ import { BienvenidaComponent } from './components/bienvenida/bienvenida.componen
 import { VariablesComponent } from './components/variables/variables.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { SignalsComponent } from './components/signals/signals.component';
+import { ComunicacionesComponent } from './components/comunicaciones/comunicaciones.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
   {
     path: "signals",
     component:SignalsComponent
+  },
+  {
+    path: "comunicaciones",
+    component: ComunicacionesComponent
   },
   {
     path: "**",

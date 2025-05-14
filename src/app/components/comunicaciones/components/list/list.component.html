@@ -1,0 +1,30 @@
+
+<h2>Listado de Usuarios</h2>
+<table border="1px">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>username</th>
+      <th>email</th>
+      <th>es activo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (usuario of users(); track $index) {
+    <tr>
+      <td>{{usuario.id}}</td>
+      <td>{{usuario.username}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{usuario.isActive}}</td>
+      <td>
+        <button (click)="editarUsuario(usuario)">Editar</button>
+      </td>
+    </tr>
+    }@empty {
+      <tr>
+        <h1>No se han encontrado usuarios registrados.</h1>
+      </tr>
+    }
+  </tbody>
+</table>
