@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { TitleCasePipe } from '@angular/common';
+import { TitleCasePipe, NgClass } from '@angular/common';
 
 import { PokemonService } from './pokemon.service';
 import { Pokemon } from './pokemon.model';
@@ -7,7 +7,7 @@ import { PokemonDetail } from './pokemon-detail.model';
 
 @Component({
   selector: 'app-servicios',
-  imports: [TitleCasePipe],
+  imports: [TitleCasePipe,NgClass],
   templateUrl: './servicios.component.html',
   styleUrl: './servicios.component.css'
 })
@@ -62,5 +62,16 @@ export class ServiciosComponent {
     const sprite = this.selectedPokemon()?.sprites.front_default;
     return sprite ?? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png"
   }
+
+  //para mostrar los tipos de componentes
+  getTypeClass(): string {
+    const pokemon = this.selectedPokemon();
+    if (!pokemon || !pokemon.types || pokemon.types.length === 0) {
+      return '';
+    }
+
+    return `${pokemon.types[0].type.name}-bg`;
+  }
+
 
 }
